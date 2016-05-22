@@ -30,6 +30,11 @@ class Player(object):
     self.x = self.x + dx * self.speed
     self.y = self.y + dy
 
+    if self.x < 0:
+      self.x = 0
+    if self.x > WIDTH:
+      self.x = WIDTH
+
   def draw(self, surface):
     pygame.draw.circle(surface, self.color, (self.x, self.y), 20, 0)
 
